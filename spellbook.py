@@ -41,6 +41,7 @@ def spellButton(index):
     global spellsTitle, currentPage, prevButton, nextButton
     
     infoFrame = Frame(root).place(relx = 0.5, rely = 0.5, anchor = CENTER)
+    # infoFrame.place() to make it so that the goBack button works (but then it wont display)
     
     spellsTitle.place_forget()
     currentPage.place_forget()
