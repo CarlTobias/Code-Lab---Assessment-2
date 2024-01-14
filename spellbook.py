@@ -7,6 +7,21 @@ import customtkinter
 from PIL import ImageTk, Image
 
 
+# Initially, I use these two lines of code to access the APU...
+# url = f"https://potterdb.com/spells?page[number]=1"
+# response = requests.get(url)
+
+# I then realized that the API split their database into multiple pages, so I tried using a for loop
+# for x in range(4): 
+#     url = f"https://potterdb.com/spells?page[number]=1"
+#     response = requests.get(url)
+    
+#     if response.status_code == 200:
+#         spells = response.json()
+#         print(response.status_code)
+
+# But errors kept occurring and there was just nothing I could come up with or seearch online to fix the issue...
+# My solution was to import the code from the API to a .json file instead
 
 def openBook(): # When this function is called, the "book" will open
     global img2, spellsTitle, currentPage
