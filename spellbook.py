@@ -7,7 +7,7 @@ import customtkinter
 from PIL import ImageTk, Image
 
 
-# Initially, I use these two lines of code to access the APU...
+# Initially, I use these two lines of code to access the APIs...
 # url = f"https://potterdb.com/spells?page[number]=1"
 # response = requests.get(url)
 
