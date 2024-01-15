@@ -30,15 +30,15 @@ def openBook(): # When this function is called, the "book" will open
     openButton.destroy()
     
     spellsTitle = customtkinter.CTkLabel(
-    root, text = "Spells", bg_color = '#413249', 
-    font = garamond50, text_color = '#ffffff', 
-    width = 150, height = 70
+        root, text = "Spells", bg_color = '#413249', 
+        font = garamond50, text_color = '#ffffff', 
+        width = 150, height = 70
     )
     spellsTitle.place(relx = 0.5, rely = 0.11, anchor = CENTER)
     pageBG.place(x = 0, y = 0, relwidth = 1, relheight = 1)
     
 
-def spellButton(index): # This function displays a page, it can be switched  to the previous or next page
+def spellButton(index): # This function displays a page, it can be switched to the previous or next page
     global spellsTitle, currentPage, prevButton, nextButton
     
     
@@ -151,7 +151,7 @@ def spellButton(index): # This function displays a page, it can be switched  to 
     ).grid(row = 2, column = 1, padx = (5, 0), pady = 5, sticky = NW)
     
     backButton = customtkinter.CTkButton(
-        infoFrame, text="Back", 
+        infoFrame, text = "Back", 
         text_color = '#f4e46b', fg_color = '#413249', hover_color = '#181119', 
         font = garamond20, width = 100, command = infoFrame.destroy
     )
@@ -215,23 +215,23 @@ with open("spells.json", "r") as file: # Opened the .json file that stores the i
         
         for col in range(2): # This inner-outer loop allows for making two columns;
             for row in range(10): # With 10 rows for each column
-                index = row + (p * 20) + (col * 10) # counts the spells sooo 1-20 for the first page, 21-40, and so on
+                index = row + (p * 20) + (col * 10) # Counts the spell index continuously (so 1-20 for the first page, 21-40, and so on)
                 if index < 312:
                     customtkinter.CTkButton(
-                        pages, text=f"{spells['data'][index]['attributes']['name']}", 
+                        pages, text = f"{spells['data'][index]['attributes']['name']}", 
                         text_color = '#f4e46b', fg_color = '#413249', hover_color = '#181119', 
                         font = garamond20, width = 250, command = lambda i = index: spellButton(i)
                     ).grid(row = row, column = col, padx = (5, 0), pady = 5, ipady = 8)
     
         prevButton = customtkinter.CTkButton(
-            pages, text="<--", 
+            pages, text = "<--", 
             text_color = '#f4e46b', fg_color = '#413249', hover_color = '#181119', 
             font = garamond20, width = 75, command = lambda page = p: prevPage(page)
         )
         prevButton.place(relx = 0, rely = 0.975, anchor = W)
 
         nextButton = customtkinter.CTkButton(
-            pages, text="-->", 
+            pages, text = "-->", 
             text_color = '#f4e46b', fg_color = '#413249', hover_color = '#181119', 
             font = garamond20, width = 75, command = lambda page = p: nextPage(page)
         )
@@ -252,7 +252,7 @@ coverPageBG.place(x = 0, y = 0, relwidth = 1, relheight = 1)
 
 # Button that goes on top of the cover page (when pressed, it calls the first function)
 openButton = customtkinter.CTkButton(
-    root, text="Open Book", 
+    root, text = "Open Book", 
     text_color = '#ffffff', bg_color = '#413249', fg_color = '#181119', hover_color = '#f4e46b', 
     font = garamond20, width = 250, command = openBook
 )
