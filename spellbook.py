@@ -38,7 +38,7 @@ def openBook(): # When this function is called, the "book" will open
     pageBG.place(x = 0, y = 0, relwidth = 1, relheight = 1)
     
 
-def spellButton(index): # This function displays a page, it can be switched to the previous or next page
+def spellButton(index): # This function displays a spell and its information
     global spellsTitle, currentPage, prevButton, nextButton
     
     
