@@ -13,7 +13,7 @@ from PIL import ImageTk, Image
 
 # I then realized that the API split their database into multiple pages, so I tried using a for loop
 # for x in range(4): 
-#     url = f"https://potterdb.com/spells?page[number]=1"
+#     url = f"https://potterdb.com/spells?page[number]={x}"
 #     response = requests.get(url)
     
 #     if response.status_code == 200:
